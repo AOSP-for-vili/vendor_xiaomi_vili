@@ -117,6 +117,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/vili/proprietary/vendor/etc/camera/xiaomi/thirdpartysnapshot.json:$(TARGET_COPY_OUT_VENDOR)/etc/camera/xiaomi/thirdpartysnapshot.json \
     vendor/xiaomi/vili/proprietary/vendor/etc/init/init.vendor.sensors.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.vendor.sensors.rc \
     vendor/xiaomi/vili/proprietary/vendor/etc/init/ipa_fws.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/ipa_fws.rc \
+    vendor/xiaomi/vili/proprietary/vendor/etc/init/vendor.dolby.hardware.dms@2.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.dolby.hardware.dms@2.0-service.rc \
     vendor/xiaomi/vili/proprietary/vendor/etc/init/vendor.sensors.qti.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.sensors.qti.rc \
     vendor/xiaomi/vili/proprietary/vendor/etc/init/vendor.sensors.sscrpcd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.sensors.sscrpcd.rc \
     vendor/xiaomi/vili/proprietary/vendor/etc/init/vendor.xiaomi.hardware.citsensorservice@1.1-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.xiaomi.hardware.citsensorservice@1.1-service.rc \
@@ -127,6 +128,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/vili/proprietary/vendor/etc/ltm_config_xiaomi_42_08_0b_cmd_mode_dsc_dsi_panel.xml:$(TARGET_COPY_OUT_VENDOR)/etc/ltm_config_xiaomi_42_08_0b_cmd_mode_dsc_dsi_panel.xml \
     vendor/xiaomi/vili/proprietary/vendor/etc/mdss_dsi_k3s_42_02_0a_dsc_cmd_mi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mdss_dsi_k3s_42_02_0a_dsc_cmd_mi.xml \
     vendor/xiaomi/vili/proprietary/vendor/etc/mdss_dsi_k3s_42_02_0b_dsc_cmd_mi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mdss_dsi_k3s_42_02_0b_dsc_cmd_mi.xml \
+    vendor/xiaomi/vili/proprietary/vendor/etc/media_codecs_dolby_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_dolby_audio.xml \
     vendor/xiaomi/vili/proprietary/vendor/etc/qdcm_calib_data_xiaomi_42_02_0a_cmd_mode_dsc_dsi_panel.xml:$(TARGET_COPY_OUT_VENDOR)/etc/qdcm_calib_data_xiaomi_42_02_0a_cmd_mode_dsc_dsi_panel.xml \
     vendor/xiaomi/vili/proprietary/vendor/etc/qdcm_calib_data_xiaomi_42_02_0b_cmd_mode_dsc_dsi_panel.xml:$(TARGET_COPY_OUT_VENDOR)/etc/qdcm_calib_data_xiaomi_42_02_0b_cmd_mode_dsc_dsi_panel.xml \
     vendor/xiaomi/vili/proprietary/vendor/etc/sensors/config/ak991x_dri_0.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/ak991x_dri_0.json \
@@ -374,6 +376,8 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/vili/proprietary/vendor/lib64/camera/fdconfigvideolite.bin:$(TARGET_COPY_OUT_VENDOR)/lib64/camera/fdconfigvideolite.bin
 
 PRODUCT_PACKAGES += \
+    libdapparamstorage \
+    vendor.dolby.hardware.dms@2.0 \
     audio.primary.lahaina \
     liba2dpoffload \
     libacdb-fts \
@@ -390,6 +394,7 @@ PRODUCT_PACKAGES += \
     libaudioroute_ext \
     libbatterylistener \
     libcomprcapture \
+    libdeccfg \
     libexthwplugin \
     libhdmiedid \
     libhdmipassthru \
@@ -399,7 +404,13 @@ PRODUCT_PACKAGES += \
     libsndmonitor \
     libspkrprot \
     libssrec \
+    libstagefright_soft_ac4dec \
+    libstagefright_soft_ddpdec \
+    libstagefrightdolby \
     libvideoNS \
+    libhwdap \
+    libswgamedap \
+    libswvqe \
     HDR10plus \
     com.qti.eeprom.vili_ofilm_ov16a1q_bl24sa64_front_eeprom \
     com.qti.eeprom.vili_sunny_imx355_gt24p64e_ultra_eeprom \
@@ -608,6 +619,7 @@ PRODUCT_PACKAGES += \
     libcom.xiaomi.pluginutils \
     libcup_preview \
     libcvface_api \
+    libdlbdsservice \
     libfocus \
     libgf_ca \
     libgf_hal \
@@ -701,6 +713,7 @@ PRODUCT_PACKAGES += \
     sensors.mius.proximity \
     sensors.ssc \
     sensors.touch.detect \
+    vendor.dolby.hardware.dms@2.0-impl \
     vendor.qti.hardware.camera.postproc@1.0-service-impl \
     vendor.xiaomi.hardware.cameraperf@1.0-impl \
     vendor.xiaomi.hardware.cameraperf@1.0 \
@@ -752,8 +765,10 @@ PRODUCT_PACKAGES += \
     misound_karaokemix_res \
     misound_res_headphone \
     misound_res_spk \
+    manifest_vendor.dolby.hardware.dms.xml \
     vendor.xiaomi.hardware.citsensorservice@1.1-service.xml \
     batterysecret \
+    vendor.dolby.hardware.dms@2.0-service \
     vendor.xiaomi.hardware.citsensorservice@1.1-service \
     init.qcom.sensors \
     sensors.qti \
