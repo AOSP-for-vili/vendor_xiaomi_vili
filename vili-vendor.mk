@@ -409,6 +409,9 @@ PRODUCT_PACKAGES += \
     libstagefrightdolby \
     libvideoNS \
     libhwdap \
+    libqcbassboost \
+    libqcreverb \
+    libqcvirt \
     libswgamedap \
     libswvqe \
     HDR10plus \
